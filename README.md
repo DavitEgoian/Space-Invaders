@@ -1,112 +1,76 @@
 # Space Invaders 🚀👾
 
-The classic arcade game where you shoot down alien ships.
+A recreation of the classic arcade game where you defend Earth from waves of descending alien ships, built using Python and the Turtle graphics library.
 
-1. **Launch** the game window with Turtle.
-2. **Control** your player ship (3 lives) with arrow keys.
-3. **Shoot** yellow bullets to destroy rows of red, orange, and yellow enemies.
-4. **Hide** behind destructible green barriers.
-5. **Dodge** enemy fire and prevent aliens from reaching the bottom.
-6. **Beat** each wave to level up—enemies speed up over time.
-7. **Catch** the occasional UFO bonus for 100 points.
-8. **See** your score, level, and lives displayed on-screen.
-9. **Enjoy** retro sound effects (shoot, explosion, level-up, UFO).
+## 🎮 Gameplay Overview
 
----
+Take command of your ship and stop the alien invasion!
 
-## 🛠️ Features
+1. **Defend:** Destroy rows of aliens (Yellow, Orange, and Red) before they reach the bottom.
+2. **Survive:** Dodge enemy fire and hide behind destructible green barriers.
+3. **Score:** Earn points for every hit. Catch the random UFO for a massive bonus.
+4. **Progress:** Clear waves to advance levels. Enemies become faster with every new level.
 
-* **Classic Gameplay**
-  Implements the core mechanics of Space Invaders: fleet movement, barrier destruction, and level progression.
+## ✨ Features
 
-* **Multiple Enemy Types**
+* **Classic Mechanics**: Authentic fleet movement, destructible covers, and increasing difficulty.
+* **Enemy Variety**:
+  * **Yellow Aliens** (Top): 30 points
+  * **Orange Aliens** (Middle): 20 points
+  * **Red Aliens** (Bottom): 10 points
+  * **UFO**: Random spawn for **100 bonus points**.
+* **Leveling System**: Infinite progression where enemies gain speed after every cleared wave.
+* **Retro Audio**: Sound effects for shooting, explosions, and game events (Windows only).
 
-  * **Yellow Aliens** (top row): 30 points
-  * **Orange Aliens** (middle row): 20 points
-  * **Red Aliens** (bottom row): 10 points
+## 💻 Prerequisites
 
-* **UFO Bonus Enemy**
-  Randomly spawns across the top for an extra **100 points**.
+* Python 3.x
+* Standard libraries (included with Python): `turtle`, `math`, `random`, `time`
 
-* **Protective Barriers**
-  Four green barriers you can duck behind—and destroy with bullets.
+### ⚠️ Platform Compatibility
+**Audio**: This game uses the `winsound` module for sound effects, which is standard on **Windows**.
+* On **macOS/Linux**, the game will run perfectly, but without sound effects.
 
-* **Lives & Scoring System**
-  Start with 3 lives; lose one on an enemy bullet hit or collision.
+## 🚀 Getting Started
 
-* **Level Progression**
-  Each cleared wave increases enemy speed and descent rate.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/DavitEgoian/Space-Invaders.git
+   cd Space-Invaders
+   ```
 
-* **Sound Effects**
-  Built-in beeps for shooting, explosions, UFO, level-ups, and game-over.
-
-* **Start & Game-Over Screens**
-  Friendly prompts to start a new game or retry after defeat.
-
----
-
-## 📂 Repository Structure
-
-```
-.
-├── main.py           # Entry point that instantiates and runs Game
-├── game.py           # Game logic and main loop
-├── player.py         # Player class (movement, rendering)
-├── enemy.py          # Enemy class (behavior, animation)
-├── bullet.py         # Bullet class (player & enemy projectiles)
-```
-
----
-
-## 🚀 Usage
-
-1. **Run the game**
-
+2. **Run the game:**
    ```bash
    python main.py
    ```
 
-2. **Controls**
+## 🕹️ Controls
 
-   * **Left Arrow**: Move left
-   * **Right Arrow**: Move right
-   * **Space**: Fire bullet / Start game
-   * **Q**: Quit game
+| Key | Action |
+| :--- | :--- |
+| **← Left Arrow** | Move Ship Left |
+| **→ Right Arrow** | Move Ship Right |
+| **Spacebar** | Fire Bullet / Start Game |
+| **Q** | Quit Game |
 
-3. **Objective**
-   Destroy all enemies to advance levels, avoid enemy fire, and protect your barriers. Rack up points and aim for a high score!
+## 📂 Project Structure
 
----
+* `main.py`: Entry point; initializes the game window.
+* `game.py`: Core logic, game loop, and state management.
+* `player.py`: Player ship movement and rendering.
+* `enemy.py`: Alien behavior, movement patterns, and types.
+* `bullet.py`: Projectile logic for both player and enemies.
 
-## ⚙️ Configuration
+## ⚙️ Customization
 
-You can tweak gameplay parameters in `game.py`:
+You can tweak the game difficulty and layout by modifying the constants in `game.py`:
 
 ```python
-# in Game class
-SCREEN_WIDTH = 600
-SCREEN_HEIGHT = 700
-NUM_ENEMIES_ROW = 5
-NUM_ENEMIES_COL = 4
-ENEMY_SPACING_X = 60
-ENEMY_SPACING_Y = 50
-ENEMY_START_Y = 250
-enemy_speed = 2           # initial speed of enemies
-enemy_move_time = 0.02    # time between moves
-BARRIER_Y = -200
-NUM_BARRIERS = 4
-UFO_SPAWN_CHANCE = 0.002  # probability per frame
+SCREEN_WIDTH = 600      # Window width
+NUM_ENEMIES_ROW = 5     # Aliens per row
+enemy_speed = 2         # Base movement speed
+UFO_SPAWN_CHANCE = 0.002 # Frequency of bonus ship
 ```
 
-Adjust these values to change difficulty, formation layout, and overall pacing.
-
 ---
-
-## 📝 Notes
-
-* This game uses **Turtle** for graphics—performance may vary by system.
-* Sound effects utilize **winsound.Beep** on Windows. Other platforms will run silently.
-* You can replace shapes or add images by registering custom Turtle shapes in `register_shapes()`.
-* Contributions and bug reports are welcome—feel free to open an issue or pull request!
-
----
+*Built with Python Turtle. Contributions are welcome!*
